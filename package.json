@@ -6,33 +6,41 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-
     "format": "prettier . --ignore-path .gitignore --write",
     "lint": "eslint . --ignore-path .gitignore --fix",
     "fix-style": "npm run format & npm run lint",
     "prepare": "husky install",
-
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@hookform/resolvers": "^4.1.2",
+    "@mui/material": "^6.4.5",
+    "axios": "^1.8.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.54.2",
+    "react-router": "^7.2.0",
+    "react-router-dom": "^7.2.0",
+    "sass": "^1.85.0",
+    "zod": "^3.24.2"
   },
   "husky": {
-        "hooks": {
-          "pre-commit": "lint-staged"
-        }
-    },
-    "lint-staged": {
-        "*.ts": [
-          "eslint --fix",
-          "prettier --write"
-        ],
-        "*.tsx": [
-          "eslint --fix",
-          "prettier --write"
-        ]
-    },
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.tsx": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
   "devDependencies": {
     "@eslint/js": "^9.16.0",
     "@types/react": "^18.3.12",

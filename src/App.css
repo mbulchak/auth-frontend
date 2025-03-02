@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+}
+.nav {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+
+  padding: 8px;
+}

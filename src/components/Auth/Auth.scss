@@ -1,0 +1,17 @@
+.auth {
+  &__component {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 250px
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+
+  }
+}
