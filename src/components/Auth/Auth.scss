@@ -1,17 +1,29 @@
 .auth {
   &__component {
+    margin: 0 auto;
+  }
+  &__component {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 30px;
+
     align-items: center;
-    height: 100vh;
-    gap: 250px
+
+    height: 50vh;
+    width: 300px;
+
+    border: 1px solid black;
+
   }
+
+
 
   &__form {
     display: flex;
     flex-direction: column;
-    gap: 10px
+    gap: 10px;
+
 
   }
 }
