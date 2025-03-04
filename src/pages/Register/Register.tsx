@@ -1,22 +1,19 @@
-import { AuthComponent, TSignUpSchema } from '../../components/Auth/Auth';
+import { AuthComponent, TSignUpSchema } from '../../components/AuthComponent/AuthComponent';
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
+import Typography  from '@mui/material/Typography';
 
 export const Register = () => {
   const navigate = useNavigate();
   const [errorRegister, setErrorRegister] = useState('');
 
   const onSubmit = async (data: TSignUpSchema) => {
-    console.log(data);
-    // here i need to sumbit to server
-
     await axios
       .post('http://localhost:5000/api/v1/auth/register', {
         ...data,
       })
-      .then((response) => {
-        console.log('response', response);
+      .then(() => {
         navigate('/login');
       })
       .catch((error) => {
@@ -28,10 +25,10 @@ export const Register = () => {
   return (
     <>
     {errorRegister && (
-        <p className='error'>{errorRegister}</p>
+        <Typography align='center' variant='h6' color='error'>{errorRegister}</Typography>
       )}
 
-      <AuthComponent onSubmit={onSubmit} authTitle="Register" />
+      <AuthComponent onSubmit={onSubmit} authTitle="Sign Up" />
     </>
   );
 };

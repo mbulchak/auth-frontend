@@ -1,6 +1,7 @@
 import { NavLink, Outlet, useNavigate } from 'react-router';
 import './App.css';
 import Button from '@mui/material/Button';
+import Typography  from '@mui/material/Typography';
 import { useAuth } from './context/AuthContext';
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
       </nav>
 
       {isLogin && authUser && (
-        <p>Congratulations {authUser.username}</p>
+        <Typography align='center' color='string' variant='h5'>Congratulations {authUser.username}</Typography>
       )}
 
       <Outlet />

@@ -1,8 +1,9 @@
-import { AuthComponent, TSignUpSchema } from '../../components/Auth/Auth';
+import { AuthComponent, TSignUpSchema } from '../../components/AuthComponent/AuthComponent';
 import axios from 'axios';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { useNavigate } from 'react-router';
+import Typography from '@mui/material/Typography';
 
 export const Login = () => {
   const [errorLogin, setErrorLogin] = useState('');
@@ -10,14 +11,11 @@ export const Login = () => {
   const navigate = useNavigate();
 
   const onSubmit = async (data: TSignUpSchema) => {
-    console.log(data);
-
     await axios
       .post('http://localhost:5000/api/v1/auth/login', {
         ...data,
       })
       .then((response) => {
-        console.log('response', response);
         const barerToken = response.data.accessToken;
         login(barerToken);
         setIsLogin(true);
@@ -33,7 +31,7 @@ export const Login = () => {
   return (
     <>
       {errorLogin && (
-        <p className='error'>{errorLogin}</p>
+        <Typography align='center' variant='h6' color='error' >{errorLogin}</Typography>
       )}
 
       <AuthComponent onSubmit={onSubmit} authTitle="Login" />
